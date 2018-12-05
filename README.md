@@ -602,7 +602,12 @@ Protocol ** protocol_copyProtocolList ( Protocol *proto, unsigned int *outCount 
 BOOL protocol_conformsToProtocol ( Protocol *proto, Protocol *other );
 ```
 
-
+# 六、Runtime的具体运用
+1. 查看运行时系统中类、对象、方法、属性、协议的各类信息内容，可以进系统 API 的**objc/runtime**中查看
+2. 动态的创建类和方法，并对其操作
+3. 交换方法的实现
+4. 为某个对象添加方法
+5. 消息转发。。。
 
 
 
