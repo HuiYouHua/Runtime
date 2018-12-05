@@ -2,9 +2,9 @@
 
 
 
-#一、类与对象基础数据结构
+# 一、类与对象基础数据结构
 
-##1.类与对象基础数据结构
+## 1.类与对象基础数据结构
 
 ### 1）Class
 
@@ -53,7 +53,7 @@ struct objc_cache {
 };
 ```
 
-###4）元类（Meta Class）
+### 4）元类（Meta Class）
 
 ```objective-c
 // meta-class是一个类对象的类。
@@ -63,7 +63,7 @@ struct objc_cache {
 
 ## 2.类相关操作函数
 
-###1）类名（name）
+### 1）类名（name）
 
 ```objective-c
 // 获取类的类名
@@ -135,7 +135,7 @@ BOOL class_conformsToProtocol ( Class cls, Protocol *protocol );
 Protocol * class_copyProtocolList ( Class cls, unsigned int *outCount );
 ```
 
-###6）版本
+### 6）版本
 
 ```objective-c
 // 获取版本号
@@ -154,9 +154,9 @@ void objc_setFutureClass ( Class cls, const char *name );
 
 
 
-##3.动态创建类和对象
+## 3.动态创建类和对象
 
-###1）动态创建类
+### 1）动态创建类
 
 ```objective-c
 // 创建一个新类和元类
@@ -189,7 +189,7 @@ id object_copy ( id obj, size_t size );
 id object_dispose ( id obj );
 ```
 
-###2）针对对象实例变量进行操作的函数
+### 2）针对对象实例变量进行操作的函数
 
 ```objective-c
 // 修改类实例的实例变量的值
@@ -204,7 +204,7 @@ id object_getIvar ( id obj, Ivar ivar );
 void object_setIvar ( id obj, Ivar ivar, id value );
 ```
 
-3）针对对象的类进行操作的函数
+### 3）针对对象的类进行操作的函数
 
 ```objective-c
 // 返回给定对象的类名
@@ -215,7 +215,7 @@ Class object_getClass ( id obj );
 Class object_setClass ( id obj, Class cls );
 ```
 
-##5.获取类定义
+## 5.获取类定义
 
 ```objective-c
 // 获取已注册的类定义的列表
@@ -331,9 +331,9 @@ objc_property_attribute_t * property_copyAttributeList ( objc_property_t propert
 
 # 三、方法和消息
 
-##1.方法
+## 1.方法
 
-###1)SEL
+### 1)SEL
 
 ```objective-c
 // SEL又叫选择器，是表示一个方法的selector的指针
@@ -345,14 +345,14 @@ NSLog(@"sel : %p", sel1);
 RuntimeTest[52734:466626] sel : 0x100002d72
 ```
 
-###2)IMP
+### 2)IMP
 
 ```objective-c
 // IMP实际上是一个函数指针，指向方法实现的首地址
 id (*IMP)(id, SEL, ...)
 ```
 
-###3）Method
+### 3）Method
 
 ```objective-c
 typedef struct objc_method *Method;
@@ -364,7 +364,7 @@ struct objc_method {
 }
 ```
 
-###4）objc_method_description
+### 4）objc_method_description
 
 ```objective-c
 struct objc_method_description { 
@@ -446,7 +446,7 @@ for ( i = 0 ; i < 1000 ; i++ )
 
 ## 7.消息转发
 
-###1）动态方法解析
+### 1）动态方法解析
 
 ```objective-c
 // 对象在接收到未知的消息时，首先会调用所属类的类方法+resolveInstanceMethod:(实例方法)或 者+resolveClassMethod:(类方法)。在这个方法中，我们有机会为该未知消息新增一个”处理方法”“。不过使用该方法的前提是我们已经 实现了该”处理方法”，只需要在运行时通过class_addMethod函数动态添加到类里面就可以了。如下代码所示：
@@ -471,7 +471,7 @@ void functionForMethod1(id self, SEL _cmd) {
 - (id)forwardingTargetForSelector:(SEL)aSelector
 ```
 
-###3）完整消息转发
+### 3）完整消息转发
 
 ```objective-c
 // 消息转发机制使用从这个方法中获取的信息来创建NSInvocation对象。因此我们必须重写这个方法，为给定的selector提供一个合适的方法签名。
