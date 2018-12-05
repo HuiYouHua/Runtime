@@ -1,6 +1,3 @@
-[TOC]
-
-
 
 # 一、类与对象基础数据结构
 
@@ -167,7 +164,7 @@ void objc_disposeClassPair ( Class cls );
 void objc_registerClassPair ( Class cls );
 ```
 
-###2）动态创建对象
+### 2）动态创建对象
 
 ```objective-c
 // 创建类实例
